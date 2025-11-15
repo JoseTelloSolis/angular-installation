@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Instalar y Configurar Angular 19</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+  <!-- Tu CSS -->
+  <link rel="stylesheet" href="css/style.css?v=1.0">
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+
+        <section class="my-5 p-4 doc-card">
+          <h1 class="mb-3">Cómo instalar y configurar Angular 19 | Node 20+ | Angular CLI</h1>
+
+          <img src="img/angular.jpg" alt="Angular" class="full-width mb-4">
+
+          <p class="lead">Guía rápida y práctica para iniciar un proyecto moderno en Angular 19. Ideal para demostrar en tu GitHub que conoces el flujo básico.</p>
+
+          <hr>
+
+          <h2>Paso 1 — Instalar Node.js (20+)</h2>
+          <p>Angular 19 requiere Node.js 20 o superior. Descarga e instala desde <a href="https://nodejs.org/" target="_blank" rel="noopener">nodejs.org</a>.</p>
+          <pre><code>node -v
+npm -v</code></pre>
+
+          <h2>Paso 2 — Instalar Angular CLI</h2>
+          <p>Instala la herramienta oficial:</p>
+          <pre><code>npm install -g @angular/cli</code></pre>
+          <p>Verifica:</p>
+          <pre><code>ng version</code></pre>
+
+          <h2>Paso 3 — Crear un nuevo proyecto</h2>
+          <p>Crear el proyecto (ejemplo <code>mi-angular-app</code>):</p>
+          <pre><code>ng new mi-angular-app</code></pre>
+          <p>Cuando pregunte, responde: <strong>Yes</strong> para routing y elige <strong>SCSS</strong> o <strong>CSS</strong>.</p>
+
+          <h2>Paso 4 — Ejecutar la aplicación</h2>
+          <pre><code>cd mi-angular-app
+ng serve -o</code></pre>
+          <p>El navegador abrirá: <code>http://localhost:4200/</code></p>
+
+          <h2>Paso 5 — Crear un componente</h2>
+          <p>Ejemplo: crear componente <code>pages/inicio</code>:</p>
+          <pre><code>ng g c pages/inicio</code></pre>
+
+          <h2>Paso 6 — Routing básico</h2>
+          <p>Editar <code>src/app/app-routing.module.ts</code> y añadir:</p>
+          <pre><code>import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { InicioComponent } from './pages/inicio/inicio.component';
+
+const routes: Routes = [
+  { path: '', component: InicioComponent }
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }</code></pre>
+
+          <h2>Paso 7 — Código mínimo del componente</h2>
+          <p>En <code>inicio.component.html</code> puedes poner:</p>
+          <pre><code>&lt;h1&gt;Bienvenido a Angular 19&lt;/h1&gt;
+&lt;p&gt;Este es un componente de ejemplo.&lt;/p&gt;</code></pre>
+
+          <h2>Paso 8 — Construir para producción</h2>
+          <pre><code>ng build</code></pre>
+          <p>Los archivos finales quedan en <code>dist/mi-angular-app/</code>.</p>
+
+          <hr>
+
+          <h3>Consejos rápidos</h3>
+          <ul>
+            <li>Usa <code>ng generate service</code> para servicios (API).</li>
+            <li>Para estilos rápidos añade <code>tailwindcss</code> o usa Bootstrap.</li>
+            <li>Si usas GitHub Pages, sube la carpeta <code>dist</code> o usa <code>angular-cli-ghpages</code>.</li>
+          </ul>
+
+          <p class="small text-muted">Guía creada para demostrar conocimiento práctico de Angular en proyectos personales.</p>
+        </section>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS (opcional) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
